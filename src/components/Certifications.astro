@@ -1,0 +1,96 @@
+---
+import { siteConfig } from "../config";
+const hasCertifications = siteConfig.certifications && siteConfig.certifications.length > 0;
+---
+
+{
+  hasCertifications && (
+    <section id="certifications" class="relative z-10 p-8 sm:p-12 md:p-16 lg:p-24">
+      <div class="reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+          <div class="lg:col-span-4 overflow-hidden">
+            <h2 class="text-3xl sm:text-4xl section-heading">
+              Certifications
+            </h2>
+            <div class="section-accent-bar" />
+          </div>
+
+          <div class="lg:col-span-8">
+            <div class="space-y-6 sm:space-y-8">
+              {siteConfig.certifications.map((cert) => {
+                const Wrapper = cert.link ? "a" : "div";
+                const wrapperProps = cert.link
+                  ? { href: cert.link, target: "_blank", rel: "noopener noreferrer" }
+                  : {};
+
+                return (
+                  <div class="group">
+                    <Wrapper
+                      {...wrapperProps}
+                      class="block glass-card glow-hover rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8"
+                    >
+                      <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
+                        <div class="flex items-start gap-4">
+                          {/* Certificate icon */}
+                          <div class="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center mt-0.5"
+                            style="background: var(--accent-subtle); border: 1px solid rgba(108, 99, 255, 0.3);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 sm:w-6 sm:h-6" style="color: var(--accent)">
+                              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                              <path d="M15 15m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                              <path d="M13 17.5v4.5l2 -1.5l2 1.5v-4.5" />
+                              <path d="M10 19h-5a2 2 0 0 1 -2 -2v-10c0 -1.1 .9 -2 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-1" />
+                              <path d="M6 9h12" />
+                              <path d="M6 12h3" />
+                              <path d="M6 15h2" />
+                            </svg>
+                          </div>
+                          <div>
+                            <h3 class="text-lg sm:text-xl font-semibold" style="color: var(--text-primary)">
+                              {cert.name}
+                            </h3>
+                            <p class="text-base sm:text-lg" style="color: var(--accent)">
+                              {cert.issuer}
+                            </p>
+                          </div>
+                        </div>
+                        <div class="flex items-center gap-2 mt-2 sm:mt-0">
+                          <span class="text-xs sm:text-sm font-mono" style="color: var(--text-muted)">
+                            {cert.date}
+                          </span>
+                          {cert.link && (
+                            <svg
+                              class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                              style="color: var(--accent)"
+                            >
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7V17" />
+                            </svg>
+                          )}
+                        </div>
+                      </div>
+
+                      {cert.bullets && cert.bullets.length > 0 && (
+                        <ul class="space-y-2.5 mt-4 sm:ml-14">
+                          {cert.bullets.map((bullet) => (
+                            <li class="flex items-start">
+                              <span class="inline-block w-1.5 h-1.5 rounded-full mt-2.5 mr-3 flex-shrink-0" style="background: var(--accent); box-shadow: 0 0 8px var(--accent-glow);" />
+                              <span class="text-sm sm:text-base" style="color: var(--text-secondary)">
+                                {bullet}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </Wrapper>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

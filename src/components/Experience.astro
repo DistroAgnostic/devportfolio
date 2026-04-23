@@ -1,0 +1,57 @@
+---
+import { siteConfig } from "../config";
+const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
+---
+
+{
+  hasExperience && (
+    <section id="experience" class="relative z-10 p-8 sm:p-12 md:p-16 lg:p-24">
+      <div class="reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+          <div class="lg:col-span-4">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl section-heading">
+              Experience
+            </h2>
+            <div class="section-accent-bar" />
+          </div>
+
+          <div class="lg:col-span-8">
+            <div class="relative">
+              {siteConfig.experience.map((exp, index) => (
+                <div class="relative mb-12 last:mb-0">
+                  {/* Experience card */}
+                  <div class="glass-card glow-hover rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                      <div>
+                        <h3 class="text-lg sm:text-xl font-semibold" style="color: var(--text-primary)">
+                          {exp.title}
+                        </h3>
+                        <p class="text-base sm:text-lg" style="color: var(--accent)">
+                          {exp.company}
+                        </p>
+                      </div>
+                      <span class="text-xs sm:text-sm mt-2 sm:mt-0 font-mono" style="color: var(--text-muted)">
+                        {exp.dateRange}
+                      </span>
+                    </div>
+
+                    <ul class="space-y-2.5">
+                      {exp.bullets.map((bullet) => (
+                        <li class="flex items-start">
+                          <span class="inline-block w-1.5 h-1.5 rounded-full mt-2.5 mr-3 flex-shrink-0" style="background: var(--accent); box-shadow: 0 0 8px var(--accent-glow);" />
+                          <span class="text-sm sm:text-base" style="color: var(--text-secondary)">
+                            {bullet}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

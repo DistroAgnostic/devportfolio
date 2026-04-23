@@ -1,0 +1,112 @@
+---
+import { siteConfig } from "../config";
+
+const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
+const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
+const hasEducation = siteConfig.education && siteConfig.education.length > 0;
+const hasCertifications = siteConfig.certifications && siteConfig.certifications.length > 0;
+---
+
+<header
+  id="header"
+  class="fixed top-0 left-0 right-0 z-50 hidden md:block transition-all duration-500"
+>
+  <nav class="max-w-4xl mx-auto px-6 py-3 mt-4 rounded-full glass-pill transition-all duration-500" id="nav-pill">
+    <ul class="flex items-center gap-8 justify-center">
+      <li>
+        <a
+          href="#about"
+          class="text-sm font-medium transition-all duration-300 hover:text-[var(--accent)]"
+          style="color: var(--text-secondary); --accent: var(--accent-color)"
+        >
+          About
+        </a>
+      </li>
+      {
+        hasProjects && (
+          <li>
+            <a
+              href="#projects"
+              class="text-sm font-medium transition-all duration-300 hover:text-[var(--accent)]"
+              style="color: var(--text-secondary); --accent: var(--accent-color)"
+            >
+              Projects
+            </a>
+          </li>
+        )
+      }
+      {
+        hasExperience && (
+          <li>
+            <a
+              href="#experience"
+              class="text-sm font-medium transition-all duration-300 hover:text-[var(--accent)]"
+              style="color: var(--text-secondary); --accent: var(--accent-color)"
+            >
+              Experience
+            </a>
+          </li>
+        )
+      }
+      {
+        hasCertifications && (
+          <li>
+            <a
+              href="#certifications"
+              class="text-sm font-medium transition-all duration-300 hover:text-[var(--accent)]"
+              style="color: var(--text-secondary); --accent: var(--accent-color)"
+            >
+              Certifications
+            </a>
+          </li>
+        )
+      }
+      {
+        hasEducation && (
+          <li>
+            <a
+              href="#education"
+              class="text-sm font-medium transition-all duration-300 hover:text-[var(--accent)]"
+              style="color: var(--text-secondary); --accent: var(--accent-color)"
+            >
+              Education
+            </a>
+          </li>
+        )
+      }
+    </ul>
+  </nav>
+</header>
+
+<script is:inline define:vars={{ accentColor: siteConfig.accentColor }}>
+  document.documentElement.style.setProperty('--accent-color', accentColor);
+
+  window.addEventListener("scroll", () => {
+    const pill = document.getElementById("nav-pill");
+    if (window.scrollY > 100) {
+      pill?.classList.add("glass-pill-scrolled");
+    } else {
+      pill?.classList.remove("glass-pill-scrolled");
+    }
+  });
+
+  // Scroll reveal — wait for DOM to be fully loaded
+  document.addEventListener("DOMContentLoaded", () => {
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if (!revealElements.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+          }
+        });
+      },
+      { threshold: 0.05, rootMargin: "0px 0px -50px 0px" }
+    );
+
+    revealElements.forEach((el) => observer.observe(el));
+  });
+</script>

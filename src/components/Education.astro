@@ -1,0 +1,67 @@
+---
+import { siteConfig } from "../config";
+const hasEducation = siteConfig.education && siteConfig.education.length > 0;
+---
+
+{
+  hasEducation && (
+    <section id="education" class="relative z-10 p-8 sm:p-12 md:p-16 lg:p-24">
+      <div class="reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+          <div class="lg:col-span-4">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl section-heading">
+              Education
+            </h2>
+            <div class="section-accent-bar" />
+          </div>
+
+          <div class="lg:col-span-8">
+            <div class="space-y-6 sm:space-y-8">
+              {siteConfig.education.map((edu) => (
+                <div class="glass-card glow-hover rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8">
+                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
+                    <div class="flex items-start gap-4">
+                      {/* Education icon */}
+                      <div class="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center mt-0.5"
+                        style="background: var(--accent-subtle); border: 1px solid rgba(108, 99, 255, 0.3);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 sm:w-6 sm:h-6" style="color: var(--accent)">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                          <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" />
+                          <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 class="text-lg sm:text-xl font-semibold" style="color: var(--text-primary)">
+                          {edu.degree}
+                        </h3>
+                        <p class="text-base sm:text-lg" style="color: var(--accent)">
+                          {edu.school}
+                        </p>
+                      </div>
+                    </div>
+                    <span class="text-xs sm:text-sm mt-2 sm:mt-0 font-mono" style="color: var(--text-muted)">
+                      {edu.dateRange}
+                    </span>
+                  </div>
+
+                  {edu.achievements && edu.achievements.length > 0 && (
+                    <ul class="space-y-2.5 sm:ml-14">
+                      {edu.achievements.map((achievement) => (
+                        <li class="flex items-start">
+                          <span class="inline-block w-1.5 h-1.5 rounded-full mt-2.5 mr-3 flex-shrink-0" style="background: var(--accent); box-shadow: 0 0 8px var(--accent-glow);" />
+                          <span class="text-sm sm:text-base" style="color: var(--text-secondary)">
+                            {achievement}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
