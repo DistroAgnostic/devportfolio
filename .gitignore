@@ -4,6 +4,8 @@
 .idea/
 CLAUDE.md
 CHANGELOG.md
+PortfolioImplementation_plan.md
+.gitignore
 
 # build output
 dist/
