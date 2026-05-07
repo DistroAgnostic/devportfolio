@@ -1,6 +1,13 @@
 ---
 import { siteConfig } from "../config";
 
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath } = Astro.props;
+
+const isBlog = currentPath === "/blog";
 const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
 const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
 const hasEducation = siteConfig.education && siteConfig.education.length > 0;
@@ -74,6 +81,15 @@ const hasCertifications = siteConfig.certifications && siteConfig.certifications
           </li>
         )
       }
+      <li>
+        <a
+          href="/blog"
+          class="text-sm font-medium transition-all duration-300 hover:text-[var(--accent)]"
+          style={isBlog ? "color: var(--accent-color); --accent: var(--accent-color)" : "color: var(--text-secondary); --accent: var(--accent-color)"}
+        >
+          Blog
+        </a>
+      </li>
     </ul>
   </nav>
 </header>

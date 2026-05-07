@@ -1,0 +1,45 @@
+<div
+  class="giscus-wrapper mt-12"
+  id="giscus-comments"
+>
+  <h3 class="text-xl font-bold mb-6" style="color: var(--text-primary)">
+    Comments
+  </h3>
+  <div class="giscus"></div>
+</div>
+
+<script is:inline>
+  // Lazy-load giscus when near viewport
+  const giscusObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (!document.querySelector(".giscus script")) {
+            const script = document.createElement("script");
+            script.src = "https://giscus.app/client.js";
+            script.setAttribute("data-repo", "DistroAgnostic/devportfolio");
+            script.setAttribute("data-repo-id", "R_kgDOSKryHw");
+            script.setAttribute("data-category", "Announcements");
+            script.setAttribute("data-category-id", "DIC_kwDOSKryH84C8YDH");
+            script.setAttribute("data-mapping", "pathname");
+            script.setAttribute("data-strict", "1");
+            script.setAttribute("data-reactions-enabled", "1");
+            script.setAttribute("data-emit-metadata", "0");
+            script.setAttribute("data-input-position", "top");
+            script.setAttribute("data-theme", "fro");
+            script.setAttribute("data-lang", "en");
+            script.setAttribute("data-loading", "lazy");
+            script.setAttribute("crossorigin", "anonymous");
+            script.async = true;
+            document.querySelector(".giscus")?.appendChild(script);
+          }
+          giscusObserver.disconnect();
+        }
+      });
+    },
+    { rootMargin: "200px" }
+  );
+
+  const container = document.getElementById("giscus-comments");
+  if (container) giscusObserver.observe(container);
+</script>
