@@ -1,14 +1,14 @@
 ---
-title: "Hello World — Welcome to My Blog"
+title: "Hello World - Welcome to My Blog"
 pubDate: 2026-05-05
-description: "My first blog post — why I started writing and what to expect."
+description: "My first blog post - why I started writing and what to expect."
 tags: ["intro", "personal"]
 draft: false
 ---
 
 ## Why I'm Starting This Blog
 
-I've been learning and building in AI/ML for the past few years, and I've realized that **writing is thinking**. Every project, every paper, every late-night debugging session teaches me something — and this blog is where I'll capture those lessons.
+I've been learning and building in AI/ML for the past few years, and I've realized that **writing is thinking**. Every project, every paper, every late-night debugging session teaches me something - and this blog is where I'll capture those lessons.
 
 ### What to Expect
 
@@ -23,7 +23,7 @@ I'm currently finishing my dual degree (B.Tech–M.Tech, IT) at IIPS, DAVV Indor
 
 ### Let's Build Something
 
-If you're reading this, thanks for stopping by. Feel free to drop a comment below — I'd love to hear what you're working on too.
+If you're reading this, thanks for stopping by. Feel free to drop a comment below - I'd love to hear what you're working on too.
 
 ```python
 print("Hello, world! Let's build something amazing.")

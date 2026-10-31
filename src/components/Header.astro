@@ -11,14 +11,18 @@ const isBlog = currentPath === "/blog";
 const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
 const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
 const hasEducation = siteConfig.education && siteConfig.education.length > 0;
-const hasCertifications = siteConfig.certifications && siteConfig.certifications.length > 0;
+const hasCertifications =
+  siteConfig.certifications && siteConfig.certifications.length > 0;
 ---
 
 <header
   id="header"
   class="fixed top-0 left-0 right-0 z-50 hidden md:block transition-all duration-500"
 >
-  <nav class="max-w-4xl mx-auto px-6 py-3 mt-4 rounded-full glass-pill transition-all duration-500" id="nav-pill">
+  <nav
+    class="max-w-4xl mx-auto px-6 py-3 mt-4 rounded-full glass-pill transition-all duration-500"
+    id="nav-pill"
+  >
     <ul class="flex items-center gap-8 justify-center">
       <li>
         <a
@@ -85,7 +89,9 @@ const hasCertifications = siteConfig.certifications && siteConfig.certifications
         <a
           href="/blog"
           class="text-sm font-medium transition-all duration-300 hover:text-[var(--accent)]"
-          style={isBlog ? "color: var(--accent-color); --accent: var(--accent-color)" : "color: var(--text-secondary); --accent: var(--accent-color)"}
+          style={isBlog
+            ? "color: var(--accent-color); --accent: var(--accent-color)"
+            : "color: var(--text-secondary); --accent: var(--accent-color)"}
         >
           Blog
         </a>
@@ -95,7 +101,7 @@ const hasCertifications = siteConfig.certifications && siteConfig.certifications
 </header>
 
 <script is:inline define:vars={{ accentColor: siteConfig.accentColor }}>
-  document.documentElement.style.setProperty('--accent-color', accentColor);
+  document.documentElement.style.setProperty("--accent-color", accentColor);
 
   window.addEventListener("scroll", () => {
     const pill = document.getElementById("nav-pill");
@@ -106,7 +112,7 @@ const hasCertifications = siteConfig.certifications && siteConfig.certifications
     }
   });
 
-  // Scroll reveal — wait for DOM to be fully loaded
+  // Scroll reveal - wait for DOM to be fully loaded
   document.addEventListener("DOMContentLoaded", () => {
     const revealElements = document.querySelectorAll(".reveal");
 
@@ -120,7 +126,7 @@ const hasCertifications = siteConfig.certifications && siteConfig.certifications
           }
         });
       },
-      { threshold: 0.05, rootMargin: "0px 0px -50px 0px" }
+      { threshold: 0.05, rootMargin: "0px 0px -50px 0px" },
     );
 
     revealElements.forEach((el) => observer.observe(el));

@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Chetan Patel",
-  title: "AI/ML Engineer",
-  description: "Chetan Patel — AI/ML Engineer",
+  title: "AI/ML Engineer & Web Developer",
+  description: "Chetan Patel - AI/ML Engineer & Web Developer",
   accentColor: "#6C63FF",
   social: {
     email: "creativechetan11@gmail.com",
@@ -11,66 +11,103 @@ export const siteConfig = {
     whatsapp: "https://wa.me/916261839502",
   },
   aboutMe:
-    "Final-year Dual Degree (B.Tech–M.Tech, IT) student at IIPS, DAVV Indore with a strong foundation in Data Structures & Algorithms, Python-driven Data Science (NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn), and hands-on AI/ML experience including RAG applications and LangChain. I thrive on solving problems with a solution-oriented mindset and a healthy perfectionism that keeps my work simply clever and better. Currently seeking an opportunity to apply these skills where they can make a real impact — and keep learning by doing.",
+    "Dual-degree (B.Tech–M.Tech, IT) graduate from IIPS, DAVV Indore with hands-on experience in AI/ML and production web development. I build hybrid deep learning systems (PyTorch, CLIP, spectral analysis) and production RAG applications (LangChain, Chroma DB), while also delivering responsive, multi-page websites using Next.js, React, TypeScript, and Tailwind CSS for clients including NIMHANS and a national conference. Oracle AI Vector Search certified. Currently contributing to product design and development in collaboration with Wipro.",
   skills: [
+    // Programming Languages
     "C/C++",
     "Python",
+    "TypeScript",
+    "JavaScript",
     "SQL",
+    "HTML/CSS",
+    // AI/ML
+    "PyTorch",
+    "TensorFlow",
+    "Scikit-learn",
+    "HuggingFace Transformers",
+    "LangChain",
+    "RAG",
+    "Vector Search",
+    // Data Analysis
     "Pandas",
     "NumPy",
     "Matplotlib",
-    "Seaborn",
-    "Scikit-learn",
-    "TensorFlow",
-    "LangChain",
+    // Web Development
+    "Next.js",
+    "React",
+    "Tailwind CSS",
+    "Framer Motion",
     "Streamlit",
+    // Tools
     "Git",
     "GitHub",
-    "Power BI",
-    "Google Colab",
   ],
   projects: [
     {
-      name: "AskMyPDF — Chat with Any PDF",
+      name: "AI-Generated Image Detector - CLIP + Spectral Analysis",
       description:
-        "AI-powered PDF assistant using Google Gemini 2.5 Flash, LangChain, and Streamlit. Enables real-time document chat through RAG architecture with PDF parsing (PyPDFLoader) and Chroma DB vector storage for efficient chunking & retrieval.",
-      link: "https://askmypdfpy.streamlit.app/",
-      skills: ["Python", "Streamlit", "LangChain", "Chroma DB", "RAG"],
+        "Hybrid detection system combining frozen CLIP ViT-B/32 semantic embeddings (512-d) with DCT spectral features (64-d) to classify real vs. AI-generated images, achieving 97.5% accuracy and 0.997 AUC-ROC on the CIFAKE benchmark (100K images). Lightweight MLP classifier (~182K parameters) enables CPU-only training in under 30 minutes. Deployed as an interactive Streamlit app with real-time inference, confidence scoring, and spectral analysis visualizations.",
+      link: "https://github.com/DistroAgnostic",
+      skills: ["Python", "PyTorch", "HuggingFace Transformers", "Streamlit"],
     },
     {
-      name: "Programming Languages Popularity Analysis",
+      name: "EVRI Lab - NIMHANS Research Website",
       description:
-        "Analyzed 15 years of Stack Overflow data (2008–2023) across 2,500+ data points to uncover language trends. Identified Python's 1,600% growth and Swift's post-2014 emergence, generating actionable insights for technology stack decisions.",
-      link: "https://github.com/DistroAgnostic",
-      skills: ["Python", "Pandas", "Matplotlib", "Data Visualization"],
+        "Professional multi-page institutional website for India's first dedicated endovascular research laboratory at NIMHANS, Bengaluru. Features scroll-triggered animations, animated counters, a flagship device showcase, team directory, milestone timeline, and a dynamic contact system. Deployed on Vercel with full SEO optimization.",
+      link: "https://evrilab-website.vercel.app/",
+      skills: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    },
+    {
+      name: "AskMyPDF - Chat with Any PDF",
+      description:
+        "Full-stack RAG-powered PDF assistant using LangChain and Chroma DB, enabling real-time semantic search and Q&A across 100+ page documents with sub-second retrieval. Deployed as a web app via Streamlit.",
+      link: "https://askmypdfpy.streamlit.app/",
+      skills: ["Python", "Streamlit", "LangChain", "Chroma DB", "RAG"],
     },
   ],
   experience: [
     {
-      company: "Virtual Cyber Labs",
-      title: "Cybersecurity Blue Team Intern",
-      dateRange: "Nov 2022 — Dec 2022",
+      company: "EVRI Lab - NIMHANS, Bengaluru",
+      title: "Web Developer",
+      dateRange: "2025 - Present",
       bullets: [
-        "Managed cybersecurity hackathons and learning events for 100+ students in a collaborative team environment",
-        "Developed dashboard components, navigation systems, and coding challenge sections for a security training platform",
-        "Gained hands-on experience in threat detection, incident response, and security monitoring protocols",
-        "Collaborated with cross-functional teams to implement security best practices and vulnerability assessments",
+        "Architected and developed EVRI Lab's multi-page research website using Next.js, TypeScript, and Tailwind CSS with scroll-triggered animations via Framer Motion",
+        "Implemented a dynamic contact system, SEO-optimized responsive layouts, and data-driven architecture for team, research, milestones, and news content",
+        "Deployed on Vercel with full SEO - dynamic sitemap, OpenGraph metadata, and semantic HTML",
+      ],
+    },
+    {
+      company: "Parichay - Collaboration with Wipro",
+      title: "UI/UX Designer & Developer",
+      dateRange: "2026 - Present",
+      bullets: [
+        "Contributing to the design and development of a digital product in collaboration with Wipro",
+        "Working on product ideation, UI/UX design, and frontend technical implementation",
+      ],
+    },
+    {
+      company: "National Conference, Delhi",
+      title: "Web Developer",
+      dateRange: "2026",
+      bullets: [
+        "Designed and developed the conference website for a national-level academic event",
+        "Implemented responsive layouts, event scheduling, and speaker profiles for attendees",
       ],
     },
   ],
   education: [
     {
       school: "International Institute of Professional Studies, DAVV Indore",
-      degree: "B.Tech–M.Tech (IT) Dual Degree — 5 Years",
-      dateRange: "2021 — 2026",
+      degree: "B.Tech–M.Tech (IT) Integrated Dual Degree - 5 Years",
+      dateRange: "2021 - 2026",
       achievements: [
-        "Specializing in Information Technology with focus on AI/ML and Data Science",
+        "Relevant Coursework: Machine Learning, Deep Learning, Computer Vision, NLP, Data Structures & Algorithms",
         "Active participant in technical events, hackathons, and coding competitions",
       ],
     },
     {
       school: "Achievers Academy Higher Secondary School",
-      degree: "Senior Secondary (XII) — Science",
+      degree: "Senior Secondary (XII) - Science",
       dateRange: "2021",
       achievements: [
         "Completed Science stream with strong foundation in Mathematics and Computer Science",
@@ -92,7 +129,7 @@ export const siteConfig = {
     {
       name: "Data Science with AI Trainee",
       issuer: "Growtech by Dr. Reddy's Foundation",
-      date: "June 2025 — Sept 2025",
+      date: "June 2025 - Sept 2025",
       link: "https://drive.google.com/file/d/14ImntmX0wVM12ovV1D_wBAiuaVhQHP1o/view?usp=sharing",
       bullets: [
         "Intensive training in Machine Learning, Deep Learning, NLP, and GenAI using Python",

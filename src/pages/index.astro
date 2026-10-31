@@ -22,7 +22,10 @@ import "../styles/global.css";
     <meta name="theme-color" content="#06060e" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content={`${siteConfig.name} — ${siteConfig.title}`} />
+    <meta
+      property="og:title"
+      content={`${siteConfig.name} - ${siteConfig.title}`}
+    />
     <meta property="og:description" content={siteConfig.description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://justchetan.me" />
@@ -34,7 +37,7 @@ import "../styles/global.css";
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
-    <title>{siteConfig.name} — {siteConfig.title}</title>
+    <title>{siteConfig.name} - {siteConfig.title}</title>
   </head>
   <body>
     <!-- Background elements -->
@@ -51,23 +54,41 @@ import "../styles/global.css";
       <Education />
       <section class="relative z-10 p-8 sm:p-12 md:p-16 lg:p-24">
         <div class="reveal">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center"
+          >
             <div class="lg:col-span-4">
               <h2 class="text-3xl sm:text-4xl md:text-5xl section-heading">
                 Blog
               </h2>
-              <div class="section-accent-bar" />
+              <div class="section-accent-bar"></div>
             </div>
             <div class="lg:col-span-8">
               <a href="/blog" class="block group">
                 <div class="glass-card glow-hover rounded-xl p-6 sm:p-8">
-                  <p class="text-lg leading-relaxed mb-4" style="color: var(--text-secondary)">
-                    I write about AI/ML, engineering, and things I learn along the way.
+                  <p
+                    class="text-lg leading-relaxed mb-4"
+                    style="color: var(--text-secondary)"
+                  >
+                    I write about AI/ML, engineering, and things I learn along
+                    the way.
                   </p>
-                  <div class="flex items-center gap-2 text-sm font-medium transition-all duration-300 group-hover:gap-3" style="color: var(--accent)">
+                  <div
+                    class="flex items-center gap-2 text-sm font-medium transition-all duration-300 group-hover:gap-3"
+                    style="color: var(--accent)"
+                  >
                     Read my blog
-                    <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <svg
+                      class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                     </svg>
                   </div>
                 </div>
